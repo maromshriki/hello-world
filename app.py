@@ -1,8 +1,14 @@
 from flask import Flask
+
 app = Flask(__name__)
+
 @app.route("/")
 def hello_world():
+    print("hello world")  # This will now run
     return "Hello, World!"
-    print("hello world")
+
 if __name__ == "__main__":
-    app.run(debug=True)        
+    app.run(debug=True, host='0.0.0.0')  # Required for Docker
+
+
+
